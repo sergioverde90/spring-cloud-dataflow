@@ -40,3 +40,10 @@ dataflow:>stream deploy --name time-to-log
 Deployment request has been sent for stream 'time-to-log'
 ```
 
+# RESOURCES
+
+* https://docs.spring.io/spring-cloud-dataflow/docs/current/reference/htmlsingle/
+* http://www.baeldung.com/spring-cloud-data-flow-stream-processing
+* http://engineering.pivotal.io/post/spring-cloud-data-flow-sink/
+http://start-scs.cfapps.io/
+* https://github.com/altfatterz/spring-cloud-dataflow-streaming-example
