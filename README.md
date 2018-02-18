@@ -9,6 +9,9 @@ Spring Cloud Data Flow example integrated with Kafka as message broker
 * We need a Sink, to persist or output the data.
 * We need a running Kafka broker. In the example we deploy Kafka as Docker container
 
+# START KAFKA
+Start Kafka as a Docker container. You can follow [this respository](https://github.com/sergioverde90/dockerfiles/tree/master/kafka)
+
 # START DEPLOYER AND SHELL
 From local-server project:
 ```bash
