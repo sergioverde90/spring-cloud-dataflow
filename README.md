@@ -2,8 +2,7 @@
 Spring Cloud Data Flow example integrated with Kafka as message broker
 
 # NEEDED COMPONENTS
-* We need a deployer. The full list can be found here. We'll use a local server: 
-    * https://github.com/spring-cloud/spring-cloud-deployer/
+* We need a deployer. The full list can be found [here](https://github.com/spring-cloud/spring-cloud-deployer/). We'll use a local server.
 * We need a shell to create pipeline components and deploy the stream
 * We need a source pipeline, in charge of provide a data stream
 * Optionally, we need a processor pipeline to transform and process data
