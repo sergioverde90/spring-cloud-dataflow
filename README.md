@@ -11,12 +11,17 @@ Spring Cloud Data Flow example integrated with Kafka as message broker
 
 # START DEPLOYER AND SHELL
 From local-server project:
-* mvn spring-boot:run
+```bash
+mvn spring-boot:run
+```
+
 From shell project:
-* mvn spring-boot:run
+```bash
+mvn spring-boot:run
+```
 
 # REGISTERING PIPELINE ELEMENTS
-from shell (previously deployed):
+From shell (previously deployed):
 
 ```bash
 dataflow:>app register --name time-source --type source --uri maven://com.sergio.example:spring-dataflow-local-source:1.0-SNAPSHOT
