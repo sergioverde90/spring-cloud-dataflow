@@ -1,16 +1,13 @@
 package com.sergio.example;
 
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.cloud.stream.messaging.Processor;
 import org.springframework.cloud.stream.messaging.Sink;
-import org.springframework.integration.annotation.Transformer;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Hello world!
@@ -18,8 +15,11 @@ import java.util.Date;
  */
 @EnableBinding(Sink.class)
 @SpringBootApplication
+@Slf4j
 public class App
 {
+    Logger log = LoggerFactory.getLogger(App.class);
+
     public static void main( String[] args )
     {
         SpringApplication.run(App.class, args);
@@ -27,6 +27,6 @@ public class App
 
     @StreamListener(Sink.INPUT)
     public void loggerSink(String dateParsed) {
-        System.out.println("dateParsed = " + dateParsed);
+        log.info("dateParsed = " + dateParsed);
     }
 }
