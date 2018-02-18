@@ -34,6 +34,16 @@ dataflow:>app register --name logging-sink --type sink --uri maven://com.sergio.
 Successfully registered application 'sink:logging-sink'
 ```
 
+## OUTPUTS
+
+```bash
+2018-02-16 08:24:49.741  INFO 28898 --- [nio-9393-exec-5] .s.c.d.s.s.i.AppDeploymentRequestCreator : Creating resource with [maven://com.sergio.example:spring-dataflow-local-sink:1.0-SNAPSHOT] for application [logging-sink]
+
+2018-02-16 08:24:50.009  INFO 28898 --- [nio-9393-exec-5] .s.c.d.s.s.i.AppDeploymentRequestCreator : Creating resource with [maven://com.sergio.example:spring-dataflow-local-processor:1.0-SNAPSHOT] for application [time-processor]
+
+2018-02-16 08:24:50.150  INFO 28898 --- [nio-9393-exec-5] .s.c.d.s.s.i.AppDeploymentRequestCreator : Creating resource with [maven://com.sergio.example:spring-dataflow-local-source:1.0-SNAPSHOT] for application [time-source]
+```
+
 # CREATING STREAM
 From shell:
 ```bash
@@ -43,6 +53,26 @@ Created new stream 'time-to-log'
 dataflow:>stream deploy --name time-to-log
 Deployment request has been sent for stream 'time-to-log'
 ```
+
+## OUTPUTS
+
+```bash
+2018-02-16 08:24:50.267  INFO 28898 --- [nio-9393-exec-5] o.s.c.d.s.s.AppDeployerStreamDeployer    : Deploying application named [logging-sink] as part of stream named [time-to-log] with resource URI [maven://com.sergio.example:spring-dataflow-local-sink:jar:1.0-SNAPSHOT]
+
+2018-02-16 08:24:50.621  INFO 28898 --- [nio-9393-exec-5] o.s.c.d.spi.local.LocalAppDeployer       : Deploying app with deploymentId time-to-log.logging-sink instance 0.
+   Logs will be in /var/folders/gd/js1v70wn1hx9m09hdvc74m9r0000gn/T/spring-cloud-dataflow-7903069627128289748/time-to-log-1518765890269/time-to-log.logging-sink
+
+2018-02-16 08:24:50.623  INFO 28898 --- [nio-9393-exec-5] o.s.c.d.s.s.AppDeployerStreamDeployer    : Deploying application named [time-processor] as part of stream named [time-to-log] with resource URI [maven://com.sergio.example:spring-dataflow-local-processor:jar:1.0-SNAPSHOT]
+
+2018-02-16 08:24:50.630  INFO 28898 --- [nio-9393-exec-5] o.s.c.d.spi.local.LocalAppDeployer       : Deploying app with deploymentId time-to-log.time-processor instance 0.
+   Logs will be in /var/folders/gd/js1v70wn1hx9m09hdvc74m9r0000gn/T/spring-cloud-dataflow-7903069627128289748/time-to-log-1518765890624/time-to-log.time-processor
+
+2018-02-16 08:24:50.631  INFO 28898 --- [nio-9393-exec-5] o.s.c.d.s.s.AppDeployerStreamDeployer    : Deploying application named [time-source] as part of stream named [time-to-log] with resource URI [maven://com.sergio.example:spring-dataflow-local-source:jar:1.0-SNAPSHOT]
+
+2018-02-16 08:24:50.638  INFO 28898 --- [nio-9393-exec-5] o.s.c.d.spi.local.LocalAppDeployer       : Deploying app with deploymentId time-to-log.time-source instance 0.
+   Logs will be in /var/folders/gd/js1v70wn1hx9m09hdvc74m9r0000gn/T/spring-cloud-dataflow-7903069627128289748/time-to-log-1518765890631/time-to-log.time-source
+
+``` 
 
 # RESOURCES
 
